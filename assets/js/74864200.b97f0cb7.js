@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclojure_journal=self.webpackChunkclojure_journal||[]).push([[3617],{2859:u=>{u.exports=JSON.parse('{"label":"docusaurus","permalink":"/clojure-journal/blog/tags/docusaurus","allTagsPath":"/clojure-journal/blog/tags","count":4}')}}]);
