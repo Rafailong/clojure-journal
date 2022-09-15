@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclojure_journal=self.webpackChunkclojure_journal||[]).push([[9031],{2778:o=>{o.exports=JSON.parse('{"permalink":"/clojure-journal/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclojure_journal=self.webpackChunkclojure_journal||[]).push([[4355],{4912:l=>{l.exports=JSON.parse('{"label":"facebook","permalink":"/clojure-journal/blog/tags/facebook","allTagsPath":"/clojure-journal/blog/tags","count":1}')}}]);

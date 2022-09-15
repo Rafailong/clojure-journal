@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclojure_journal=self.webpackChunkclojure_journal||[]).push([[938],{2776:e=>{e.exports=JSON.parse('{"name":"@easyops-cn/docusaurus-search-local","id":"default"}')}}]);
