@@ -1,0 +1,37 @@
+---
+slug: wonderland-kata-alphabet-cipher
+title: alphabet cipher
+authors: [ravila]
+tags: [kata]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+## Wonderland Clojure Kata: Alphabet Cipher
+
+Looking for material to learn Clojure I stumbled across an interesting Github repo:
+[gigasquid/wonderland-clojure-katas](https://github.com/gigasquid/wonderland-clojure-katas)
+and I decided that solving the katas described in the repo would be my first project
+to learn Clojure.
+
+[alphabet-cipher](https://github.com/gigasquid/wonderland-clojure-katas/tree/master/alphabet-cipher)
+is the first kata in the list.
+
+<!--truncate-->
+
+Given that I have been using Scala in my day work, I started solving the kata
+using Scala and only then I solved the kata using Clojure.
+
+import CoreClj from '!!raw-loader!./core.clj';
+import ScalaWorksheet from '!!raw-loader!./kata.worksheet.sc';
+
+<Tabs>
+  <TabItem value="scala" label="Scala" default>
+    <CodeBlock language="scala" title="kata.worksheet.sc">{ScalaWorksheet}</CodeBlock>
+  </TabItem>
+  <TabItem value="clojure" label="Clojure">
+    <CodeBlock language="clojure" title="core.clj">{CoreClj}</CodeBlock>
+  </TabItem>
+</Tabs>
