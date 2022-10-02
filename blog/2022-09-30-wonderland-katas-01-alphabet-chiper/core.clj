@@ -48,6 +48,11 @@
 ;;  [\c \e]
 ;;  [\o \e])
 
+(defn infinite-secret [s]
+  (-> s
+      seq
+      cycle))
+
 ;; now, it is time for our function to shift out alphabet
 (defn alphabet-starting-at [c]
   (->> c
@@ -111,8 +116,44 @@
                         (nth (collumn-for k) index-of-c)))]
     (str/join "" (map encode-char pairs))))
 
-(defn decode [keyword message]
-  "decodeme")
+;; decode function is PRETTY similar to the encode function
+(defn decode [secret message]
+  (let [key (infinite-secret secret)
+        pairs (map vector key message)
+        decode-char #(let [[k, c] %
+                           index-of-c (str/index-of (collumn-for k) c)]
+                       (nth alphabet index-of-c))]
+    (str/join "" (map decode-char pairs))))
+
+;; in fact, the difference is in the helper function
+;; encode-char and decode-char respectively
+;; in the encode function we use our original alphabet
+;; to know the index of c, and we extract the encodec char (by index)
+;; from the "encoded" alphabet.
+;; in the decode function we only switch the alphabets around.
+;; this similarity open a good refactoring door
+
+(defn helper [f secret message]
+  (let [key (infinite-secret secret)
+        pairs (map vector key message)]
+    (map f pairs)))
+
+(defn encode-alt [secret message]
+  (let [encode-char #(let [[k, c] %
+                           index-of-c (str/index-of alphabet c)]
+                       (nth (collumn-for k) index-of-c))]
+    (str/join "" (helper encode-char secret message))))
+
+(defn decode-alt [secret message]
+  (let [decode-char #(let [[k, c] %
+                           index-of-c (str/index-of (collumn-for k) c)]
+                       (nth alphabet index-of-c))]
+    (str/join "" (helper decode-char secret message))))
+
+;; this looks a bit better 😀
 
 (defn decipher [cipher message]
   "decypherme")
+
+;; for debugging only 😋
+(println (encode-alt "void" "meetme"))
